@@ -19,63 +19,41 @@
                 height: 100vh;
                 margin: 0;
             }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
         </style>
     </head>
+    {{--Arrays--}}
     <?php
-    $names = ['john', 'jeff', 'Thomas'];
+    $names = ['john', 'jeff', 'thomas'];
+
+    $names[] = 'Alice';
+
+//    echo '<pre>';
+//      var_dump($names);
+//    echo '<pre>';
+//    die($names);
+//    die(var_dump($names))
+
+    ?>
+    <!--    Associate arrays -->
+    <?php
+            $person = [
+                    'age' => 35,
+                    'name' => 'Joseph',
+                    'status' => 'Married',
+                    'gender' => 'Man'
+            ];
+
+            $person['car_type'] = 'Jeep' // Add to associate array
     ?>
     <body>
         <ul>
-            <?php foreach($names as $name) : ?>
-                 <li><?=$name; ?></li>
+            <?php foreach($person as $details => $val) : ?>
+                 <li> <?=$details; ?> : <strong><?= $val; ?> </strong></li>
             <?php endforeach; ?>
 
 
 
             <?php
-              $names = ['john', 'jeff', 'Thomas'];
                   foreach ($names as $name) {
                      echo "<li>$name</li>";
                    }
