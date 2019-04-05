@@ -24,6 +24,19 @@ Route::get('/arrays', function () {
     }
 });
 
+Route::get('/associateArrays', function () {
+    $todos = [
+        'title' => 'Buy food',
+        'due' => 'Tomorrow',
+        'assigned_to' => 'Sam',
+        'completed' => false,
+    ];
+
+    foreach($todos as $todo => $val){
+        echo "<li>$todo : $val</li>";
+    }
+});
+
 Route::get('/variables', function () {
 
     /* variables and string */

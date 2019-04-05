@@ -27,6 +27,13 @@
 
     $names[] = 'Alice';
 
+    $todos = [
+            'title' => 'Buy food',
+            'due' => 'Tomorrow',
+            'assigned_to' => 'Sam',
+            'status' => false,
+    ];
+
 //    echo '<pre>';
 //      var_dump($names);
 //    echo '<pre>';
@@ -52,13 +59,49 @@
             <?php endforeach; ?>
 
 
-
             <?php
                   foreach ($names as $name) {
                      echo "<li>$name</li>";
                    }
               ?>
+                {{-- Uppercase the first letter of each word --}}
+                <?= ucwords('hello i am developer') ?>
         </ul>
+    <div>
+        <ul>
+            <?php
+                foreach ($todos as $todo => $value) : ?>
+            <li>
+                <strong><?=$todo; ?></strong> : <?=$value ?>
+            </li>
+            <?php endforeach;?>
+        </ul>
+
+        {{-- Conditions --}}
+        <strong>Status: <?=$todos['status'] ? 'Complete' : 'Incomplete'; ?></strong>
+
+        <?php
+            if ($todos['status']) {
+                echo 'Complete';
+            } else {
+                echo 'Incomplete';
+            }
+        ?>
+
+        <?php
+        if (! $todos['status']) {
+            echo 'Complete';
+        } else {
+            echo 'Incomplete';
+        }
+        ?>
+
+        <?php if ($todos['status']) : ?>
+          <span class="icon">&#9989;</span>
+        <?php else : ?>
+        <span class="icon">&#9989;</span>
+        <?php endif; ?>
+    </div>
     </body>
 </html>
 
