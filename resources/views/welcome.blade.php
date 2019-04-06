@@ -95,12 +95,27 @@
             echo 'Incomplete';
         }
         ?>
+            <br/>
 
         <?php if ($todos['status']) : ?>
           <span class="icon">&#9989;</span>
         <?php else : ?>
         <span class="icon">&#9989;</span>
         <?php endif; ?>
+        <br/>
+        {{-- Functions --}}
+        <?php
+            function check_age($age) {
+                if($age >= 20) {
+                    echo 'Is allowed ';
+                } else {
+                    echo 'Is not allowed';
+                }
+            }
+
+            check_age(25);
+            check_age(15);
+        ?>
     </div>
     </body>
 </html>
