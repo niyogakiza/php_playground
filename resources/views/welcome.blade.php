@@ -116,6 +116,67 @@
             check_age(25);
             check_age(15);
         ?>
+
+        <br/>
+        <?php
+        class Task {
+
+//            protected $description;
+            public $description;
+
+//            protected $completed = false;
+            public $completed = false;
+
+            public function __construct($description)
+
+            {
+                 $this->description = $description;
+            }
+
+            public function isComplete ()
+            {
+                return $this->completed;
+            }
+
+            public function complete()
+            {
+                $this->completed = true;
+            }
+        }
+
+        $tasks = [
+                new Task('Go to the store'),
+                new Task('Buy food'),
+                new Task('Eat chicken'),
+                new Task('Clean your car'),
+                new Task('Clean garden'),
+                new Task('Study')
+        ];
+
+        $tasks[0]->complete()
+
+//        var_dump($task->isComplete());
+
+//        $task->complete();
+
+//        var_dump($task->isComplete());
+
+//        dd($tasks);
+        ?>
+        <ul>
+            <?php foreach ($tasks as $task) :?>
+
+            <li>
+                <?php if($task->completed) :?>
+                    <strike><?= $task->description; ?></strike>
+                <?php else: ?>
+                    <?= $task->description ?>
+                <?php endif; ?>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+
+
     </div>
     </body>
 </html>
